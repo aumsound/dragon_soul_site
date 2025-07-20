@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Soul Retreat | Transformative Island Sanctuary</title>
+    <style>
+        /* Dragon Soul Premium Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            background: #FFFFFF;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+
+
+        .section {
+            padding: 60px 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section:nth-child(even) {
+            background: #FAFAFA;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 6vw, 3.2rem);
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #2F4F2F;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 4vw, 2rem);
+            font-weight: 500;
+            margin-bottom: 24px;
+            color: #2F4F2F;
+            line-height: 1.3;
+        }
+
+        .text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            color: #1A1A1A;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            background: #2F4F2F;
+            color: white;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 8px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            text-align: center;
+            margin: 32px 0;
+        }
+
+        .reviews-container {
+            position: relative;
+            overflow: hidden;
+            margin: 24px 0;
+            padding: 0;
+        }
+
+        .reviews-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 15px;
+            padding: 0 3%;
+        }
+
+        .review {
+            background: #FFFFFF;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(47,79,47,0.1);
+            border: 1px solid #E5E5E5;
+            width: 94%;
+            max-width: 500px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 16px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #E5E5E5;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: #2F4F2F;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            gap: 12px;
+        }
+
+        .review-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2F4F2F, #C8A882);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .review-info {
+            flex: 1;
+        }
+
+        .review-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2F4F2F;
+            margin-bottom: 2px;
+        }
+
+        .review-role {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 1px;
+            margin-bottom: 4px;
+        }
+
+        .star {
+            color: #FFD700;
+            font-size: 14px;
+        }
+
+        .review-instagram {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: #C8A882;
+            font-weight: 500;
+        }
+
+        .review-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #1A1A1A;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .ready-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: #2F4F2F;
+            margin: 32px 0 16px 0;
+            font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+        }
+
+        .last-hero {
+            background: linear-gradient(135deg, #2F4F2F 0%, #1A1A1A 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 24px;
+        }
+
+        .last-hero h1 {
+            color: white;
+        }
+
+        .last-hero .text {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .last-hero .button {
+            background: white;
+            color: #2F4F2F;
+            font-weight: 600;
+        }
+
+        .contacts {
+            background: #FAFAFA;
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .contacts h2 {
+            margin-bottom: 32px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .contact-link {
+            display: block;
+            background: #2F4F2F;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            text-align: center;
+        }
+
+        .contact-link.instagram {
+            background: #C8A882;
+        }
+
+        /* HERO VIDEO - MOBILE FIRST */
+        .hero-video {
+            position: relative;
+            height: 100vh;
+            min-height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2F4F2F 0%, #1A1A1A 100%);
+        }
+
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: opacity 2s ease-out;
+        }
+
+        .video-container.fade-out {
+            opacity: 0;
+        }
+
+        #heroVideo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 10vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+            line-height: 0.9;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            letter-spacing: 4px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1.2s ease-out 0.5s forwards;
+        }
+
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+            font-weight: 400;
+            margin-bottom: 28px;
+            color: #C8A882;
+            line-height: 1.4;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+            letter-spacing: 1px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1.2s ease-out 2.5s forwards;
+        }
+
+        .hero-text {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 36px;
+            color: rgba(255,255,255,0.85);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1.2s ease-out 5s forwards;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #C8A882 0%, #D4B890 100%);
+            color: #1A1A1A;
+            text-decoration: none;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(200,168,130,0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1.2s ease-out 7.5s forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* SCROLL INDICATOR */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 32px;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            z-index: 4;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            animation: slideUp 1s ease-out 8s forwards;
+        }
+
+        .scroll-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .scroll-arrow {
+            font-size: 16px;
+            animation: smoothFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes smoothFloat {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(4px);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Video Section -->
+    <section class="hero-video">
+        <div class="video-container">
+            <video id="heroVideo" autoplay muted loop playsinline>
+                <source src="media/hero.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">DRAGON SOUL</h1>
+            <h2 class="hero-subtitle">Sacred Sanctuary • Exclusive Circle<br>Thailand • Koh Phangan</h2>
+            <p class="hero-text">Ancient wisdom meets modern excellence. Only 12 souls selected per journey. Six handcrafted pavilions where entrepreneurs, artists, and visionaries reclaim their authentic power.</p>
+            <a href="https://wa.me/66123456789?text=Ready for Dragon Soul screening. I seek transformation, not vacation." class="hero-cta">Begin Application</a>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span class="scroll-text">AWAKEN DRAGON SOUL</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+
+
+    <!-- About Place -->
+    <section class="section">
+        <h1>Proven Transformation. Measurable Results.</h1>
+        <h2>7 days. Lifetime change.</h2>
+        <p class="text">40% cortisol reduction verified through island biometrics. 3x decision clarity via precision breathwork protocols. Complete nervous system reset. Authentic power reclaimed. This is not a vacation—this is your renaissance.</p>
+        
+        <div class="reviews-container">
+            <div class="reviews-track">
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">JW</div>
+                        <div class="review-info">
+                            <div class="review-name">James Whitmore</div>
+                            <div class="review-role">Investment Banker, Monaco</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@jamesw_monaco</span>
+                        </div>
+                    </div>
+                    <p class="review-text">Closed my largest deal 3 weeks after returning. The mental clarity was surgical—40% cortisol reduction measured. This isn't luxury hospitality, it's life architecture.</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">IF</div>
+                        <div class="review-info">
+                            <div class="review-name">Isabella Fernandez</div>
+                            <div class="review-role">Art Director, Milan</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@isabella.milano.life</span>
+                        </div>
+                    </div>
+                    <p class="review-text">15 years of stored trauma released in 5 days. Katya's precision was extraordinary—every breath calibrated for my nervous system. Life-changing doesn't describe it.</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">HL</div>
+                        <div class="review-info">
+                            <div class="review-name">Henrik Larsson</div>
+                            <div class="review-role">Sustainability Consultant, Stockholm</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@henrik_green_future</span>
+                        </div>
+                    </div>
+                    <p class="review-text">They screened me for 45 minutes before acceptance. Everyone there was seriously committed to transformation, not vacation. Sacred container energy.</p>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <p class="ready-text">Selective admission required. We interview every applicant.</p>
+        <a href="https://wa.me/66123456789?text=Ready for Dragon Soul screening. I seek transformation, not vacation. Begin my application process." class="button">Begin Application</a>
+    </section>
+
+    <!-- Accommodation -->
+    <section class="section">
+        <h1>Ancient Wisdom. Modern Excellence.</h1>
+        <h2>Masters, not influencers.</h2>
+        <p class="text">Our guides have walked the path—15 years somatic healing, Silicon Valley burnout recovery, ayurvedic mastery. Each program draws from 3,000-year-old practices, refined for the modern soul. Hand-selected team. Zero compromises.</p>
+        
+        <div class="reviews-container">
+            <div class="reviews-track">
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">AK</div>
+                        <div class="review-info">
+                            <div class="review-name">Anna Krueger</div>
+                            <div class="review-role">Architect, Berlin</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@anna_builds_dreams</span>
+                        </div>
+                    </div>
+                    <p class="review-text">Katya has 15 years somatic healing experience—but more importantly, she's done the work herself. Her trauma-informed approach helped me process 30 years stored emotion safely.</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">DR</div>
+                        <div class="review-info">
+                            <div class="review-name">David Rousseau</div>
+                            <div class="review-role">Creative Director, Paris</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@david.creative.paris</span>
+                        </div>
+                    </div>
+                    <p class="review-text">Boris left Silicon Valley after burnout—exactly my story. His masculine awakening guidance was surgical. He knew my patterns because he lived them. Authentic wisdom.</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">MS</div>
+                        <div class="review-info">
+                            <div class="review-name">Maria Santos</div>
+                            <div class="review-role">Therapist, Barcelona</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@maria.mindful.bcn</span>
+                        </div>
+                    </div>
+                    <p class="review-text">Master breathwork facilitator took me through fear patterns I'd carried since childhood. Her precision was extraordinary—every breath calibrated for my nervous system.</p>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        
+        <p class="ready-text">Only 4 programs per year. Authentic wisdom earned through lived experience.</p>
+        <a href="https://wa.me/66123456789?text=Ready for Dragon Soul screening. I seek transformation, not vacation. Begin my application process." class="button">Begin Application</a>
+    </section>
+
+    <!-- Programs -->
+    <section class="section">
+        <h1>Next Opening: October 2025</h1>
+        <h2>Applications close September 15th</h2>
+        <p class="text">Dragon Soul exists for committed souls, not spiritual tourists. Our 45-minute screening ensures you're ready for real change. Only 12 guests per program. Sacred Feminine for power reclamation. Warrior's Path for authentic masculine. Couples' Renewal for partnership deepening.</p>
+        
+        <div class="reviews-container">
+            <div class="reviews-track">
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">ER</div>
+                        <div class="review-info">
+                            <div class="review-name">Elena Rodriguez</div>
+                            <div class="review-role">Visual Artist, Barcelona</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@elena.art.soul</span>
+                        </div>
+                    </div>
+                    <p class="review-text">Sacred Feminine program unlocked 20 years of suppressed creativity. I'm launching my art studio next month. The precision was surgical—it targeted my exact energetic blockages.</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">TM</div>
+                        <div class="review-info">
+                            <div class="review-name">Thomas Mueller</div>
+                            <div class="review-role">Tech Entrepreneur, Amsterdam</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@thomas_builds_tech</span>
+                        </div>
+                    </div>
+                    <p class="review-text">As a startup founder, I thought I needed more hustle. Warrior's Path taught me authentic masculine power. My company revenue doubled—without the stress.</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">S&J</div>
+                        <div class="review-info">
+                            <div class="review-name">Sophie & Jean Moreau</div>
+                            <div class="review-role">Psychologists, Lyon</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@sophie.jean.healing</span>
+                        </div>
+                    </div>
+                    <p class="review-text">Couples' Renewal saved our 15-year marriage. We were heading for divorce. Now we're renewing our vows. The precision of the program was surgical—it targeted our exact issues.</p>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        
+        <p class="ready-text">Only 8 spaces remaining for October 2025</p>
+        <a href="https://wa.me/66123456789?text=Ready for Dragon Soul screening. I seek transformation, not vacation. Begin my application process." class="button">Begin Application</a>
+    </section>
+
+    <!-- Team -->
+    <section class="section">
+        <h1>Your Investment. Our Commitment.</h1>
+        <h2>Sanctuary Experience: €12,000 per soul</h2>
+        <p class="text">All-inclusive 7-day journey. Mastery Intensive: €18,000 per soul with private guidance plus 90-day integration. We don't sell vacations—we architect transformation. Every detail curated for your awakening.</p>
+        
+        <div class="reviews-container">
+            <div class="reviews-track">
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">RW</div>
+                        <div class="review-info">
+                            <div class="review-name">Rachel Williams</div>
+                            <div class="review-role">Trauma Therapist, London</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@rachel.heals.london</span>
+                        </div>
+                    </div>
+                    <p class="review-text">€12,000 was the best investment I've made in 20 years. My company revenue doubled after returning. The ROI on personal transformation is immeasurable.</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">MK</div>
+                        <div class="review-info">
+                            <div class="review-name">Marcus Kellerman</div>
+                            <div class="review-role">Former Google Exec, Zurich</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@marcus.conscious.tech</span>
+                        </div>
+                    </div>
+                    <p class="review-text">The Mastery Intensive at €18,000 included 90-day integration support. Worth every euro. Three months later, I'm still implementing the practices daily.</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">IF</div>
+                        <div class="review-info">
+                            <div class="review-name">Isabella Franco</div>
+                            <div class="review-role">Neuroscientist, Milan</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@isabella.brain.science</span>
+                        </div>
+                    </div>
+                    <p class="review-text">People ask if €12,000 is expensive. I spent twice that on therapy with half the results. This is transformation architecture, not luxury hospitality.</p>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        
+        <p class="ready-text">Your awakening cannot wait another day.</p>
+        <a href="https://wa.me/66123456789?text=Ready for Dragon Soul screening. I seek transformation, not vacation. Begin my application process." class="button">Begin Application</a>
+    </section>
+
+    <!-- Day Pass -->
+    <section class="section">
+        <h1>Will You Answer the Call?</h1>
+        <h2>The extraordinary always attracts the extraordinary.</h2>
+        <p class="text">Dragon Soul exists for souls ready to shed what no longer serves and embrace their authentic power. The island, the guides, the community—all conspire to support your deepest becoming. Only the committed need apply.</p>
+        
+        <div class="reviews-container">
+            <div class="reviews-track">
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">LP</div>
+                        <div class="review-info">
+                            <div class="review-name">Lisa Petersen</div>
+                            <div class="review-role">Physiotherapist, Copenhagen</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@lisa.healing.cph</span>
+                        </div>
+                    </div>
+                    <p class="review-text">Six months later, I'm unrecognizable to myself. The old patterns simply don't exist anymore. This is what I was always meant to become.</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">MV</div>
+                        <div class="review-info">
+                            <div class="review-name">Marco Vincenti</div>
+                            <div class="review-role">Life Coach, Rome</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@marco.transforms.rome</span>
+                        </div>
+                    </div>
+                    <p class="review-text">The screening process forced me to clarify my intentions before arrival. Brilliant strategy. I knew exactly why I was there, and so did everyone else.</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">PN</div>
+                        <div class="review-info">
+                            <div class="review-name">Petra Novak</div>
+                            <div class="review-role">Corporate Lawyer, Vienna</div>
+                            <div class="review-stars">
+                                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            </div>
+                            <span class="review-instagram">@petra.awakening.vienna</span>
+                        </div>
+                    </div>
+                    <p class="review-text">I felt honored to be selected. The curation creates sacred container energy. No spiritual tourists, just authentic seekers committed to transformation.</p>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        
+        <p class="ready-text">Begin your screening. October 2025 applications close September 15th.</p>
+        <a href="https://wa.me/66123456789?text=Ready for Dragon Soul screening. I seek transformation, not vacation. Begin my application process." class="button">Begin Application</a>
+    </section>
+
+
+
+    <!-- Last Hero -->
+    <section class="last-hero">
+        <h1>Your Transformation Awaits</h1>
+        <p class="text">October 2025. Only 8 spaces remaining. Applications close September 15th. Dragon Soul exists for souls ready to shed what no longer serves and embrace their authentic power.</p>
+        <p class="ready-text">Your awakening cannot wait another day.</p>
+        <a href="https://wa.me/66123456789?text=Ready for Dragon Soul screening. I seek transformation, not vacation. Begin my application process." class="button">Begin Application</a>
+    </section>
+
+    <!-- Contacts -->
+    <section class="contacts">
+        <h2>Begin Your Screening</h2>
+        <div class="contact-links">
+            <a href="https://wa.me/66123456789?text=Ready for Dragon Soul screening. I seek transformation, not vacation. Begin my application process." class="contact-link">WhatsApp: +66 123 456 789</a>
+            <a href="https://instagram.com/dragonsoul.retreat" class="contact-link instagram">Follow @dragonsoul.retreat</a>
+        </div>
+    </section>
+
+    <script>
+        // Hero video simple logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroVideo = document.getElementById('heroVideo');
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            let soundPlayed = false;
+            
+            if (heroVideo) {
+                // Tap to enable sound once
+                document.body.addEventListener('click', function() {
+                    if (!soundPlayed) {
+                        soundPlayed = true;
+                        heroVideo.currentTime = 0;
+                        heroVideo.muted = false;
+                        heroVideo.addEventListener('ended', () => heroVideo.muted = true, { once: true });
+                    }
+                });
+            }
+
+            // Hide scroll indicator on scroll
+            if (scrollIndicator) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        scrollIndicator.style.opacity = '0';
+                    } else {
+                        scrollIndicator.style.opacity = '';
+                    }
+                });
+            }
+        });
+
+        // Real animated testimonial sliders with peek effect
+        document.querySelectorAll('.reviews-container').forEach(container => {
+            const track = container.querySelector('.reviews-track');
+            const dots = container.querySelectorAll('.dot');
+            const review = container.querySelector('.review');
+            let current = 0;
+            
+            function showSlide(n) {
+                current = n;
+                // Calculate actual slide width + gap
+                const containerWidth = container.offsetWidth;
+                const slideWidth = review.offsetWidth;
+                const gap = 15; // gap between slides
+                const moveDistance = (slideWidth + gap) * current;
+                const movePercent = (moveDistance / containerWidth) * 100;
+                
+                track.style.transform = `translateX(-${movePercent}%)`;
+                
+                // Update dots
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === current);
+                });
+            }
+            
+            function nextSlide() {
+                const next = (current + 1) % 3;
+                showSlide(next);
+            }
+            
+            // Auto slide every 3 seconds
+            setInterval(nextSlide, 3000);
+            
+            // Dot navigation
+            dots.forEach((dot, i) => {
+                dot.onclick = () => showSlide(i);
+            });
+            
+            // Initialize on load
+            showSlide(0);
+        });
+    </script>
+</body>
+</html>
