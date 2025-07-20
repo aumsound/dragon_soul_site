@@ -1,0 +1,26 @@
+{
+  "name": "dragon-soul-site",
+  "version": "1.0.0",
+  "description": "Dragon Soul - Premium Retreat Sanctuary Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p $PORT",
+    "build": "echo 'Static site - no build needed'",
+    "dev": "npx http-server . -p 8080"
+  },
+  "keywords": [
+    "retreat",
+    "wellness",
+    "luxury",
+    "transformation",
+    "thailand"
+  ],
+  "author": "Dragon Soul Team",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+} 
