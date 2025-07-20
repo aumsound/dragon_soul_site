@@ -281,11 +281,10 @@
             overflow: hidden;
         }
 
-        #heroVideo {
+        #dragonLottie {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
         }
 
         .video-overlay {
@@ -421,12 +420,10 @@
 </head>
 <body>
 
-    <!-- Hero Video Section -->
+    <!-- Hero Lottie Dragon Section -->
     <section class="hero-video">
         <div class="video-container">
-            <video id="heroVideo" autoplay muted loop playsinline>
-                <source src="media/hero.mp4" type="video/mp4">
-            </video>
+            <div id="dragonLottie"></div>
             <div class="video-overlay"></div>
         </div>
         
@@ -857,6 +854,110 @@
             // Initialize on load
             showSlide(0);
         });
+
+        // 🐉 DRAGON LOTTIE + SMOOTH SCROLL CONTROL
+        // Load Lottie Web Player
+        const script = document.createElement('script');
+        script.src = 'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js';
+        document.head.appendChild(script);
+
+        script.onload = function() {
+            // Create lottie-player element
+            const dragonContainer = document.getElementById('dragonLottie');
+            dragonContainer.innerHTML = `
+                <lottie-player
+                    id="dragonPlayer" 
+                    src="https://lottie.host/4db68bde-6fd6-4f6d-a710-b80b2e4ecfed/gEMK2qEeql.json"
+                    background="transparent"
+                    speed="1"
+                    style="width: 100%; height: 100%;"
+                    loop
+                    autoplay>
+                </lottie-player>
+            `;
+
+            // Smooth Dragon Animation Control
+            let dragonPlayer;
+            let scrollVelocity = 0;
+            let lastScrollY = 0;
+            let lastScrollTime = 0;
+            let stopTimer = null;
+            let velocityDecay = null;
+
+            setTimeout(() => {
+                dragonPlayer = document.getElementById('dragonPlayer');
+                
+                if (dragonPlayer) {
+                    console.log('🐉 Dragon Lottie loaded successfully!');
+                    dragonPlayer.setSpeed(1); // Start at 100% speed
+                }
+            }, 500);
+
+            // Smooth scroll velocity calculation
+            function calculateScrollVelocity() {
+                const currentScrollY = window.scrollY;
+                const currentTime = Date.now();
+                
+                if (lastScrollTime) {
+                    const deltaY = Math.abs(currentScrollY - lastScrollY);
+                    const deltaTime = currentTime - lastScrollTime;
+                    const velocity = deltaY / deltaTime; // pixels per ms
+                    
+                    // Normalize velocity (0-5 range)
+                    scrollVelocity = Math.min(velocity * 3, 5);
+                }
+                
+                lastScrollY = currentScrollY;
+                lastScrollTime = currentTime;
+                
+                return scrollVelocity;
+            }
+
+            // Smooth deceleration
+            function startVelocityDecay() {
+                if (velocityDecay) clearInterval(velocityDecay);
+                
+                velocityDecay = setInterval(() => {
+                    scrollVelocity *= 0.95; // Smooth decay
+                    
+                    if (dragonPlayer) {
+                        dragonPlayer.setSpeed(Math.max(scrollVelocity, 0.1));
+                    }
+                    
+                    if (scrollVelocity < 0.1) {
+                        clearInterval(velocityDecay);
+                        velocityDecay = null;
+                        
+                        // Полная остановка через 1 секунду
+                        setTimeout(() => {
+                            if (dragonPlayer) {
+                                dragonPlayer.pause();
+                            }
+                        }, 1000);
+                    }
+                }, 50);
+            }
+
+            // Main scroll listener
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                const velocity = calculateScrollVelocity();
+                
+                if (dragonPlayer) {
+                    dragonPlayer.play(); // Resume if paused
+                    dragonPlayer.setSpeed(Math.max(velocity, 0.2));
+                }
+                
+                // Clear existing timers
+                if (stopTimer) clearTimeout(stopTimer);
+                if (velocityDecay) clearInterval(velocityDecay);
+                
+                // Start decay when scroll stops
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(startVelocityDecay, 100);
+                
+            }, { passive: true });
+        };
     </script>
 </body>
 </html>
