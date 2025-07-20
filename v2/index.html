@@ -21,21 +21,16 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: #1A1A1A;
-            background: #FFFFFF;
+            background: transparent;
             position: relative;
             overflow-x: hidden;
         }
-
-
 
         .section {
             padding: 60px 24px;
             max-width: 900px;
             margin: 0 auto;
-        }
-
-        .section:nth-child(even) {
-            background: #FAFAFA;
+            background: transparent;
         }
 
         h1 {
@@ -43,8 +38,9 @@
             font-size: clamp(2rem, 6vw, 3.2rem);
             font-weight: 600;
             margin-bottom: 16px;
-            color: #2F4F2F;
+            color: #C8A882;
             line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
 
         h2 {
@@ -52,8 +48,9 @@
             font-size: clamp(1.3rem, 4vw, 2rem);
             font-weight: 500;
             margin-bottom: 24px;
-            color: #2F4F2F;
+            color: rgba(255,255,255,0.9);
             line-height: 1.3;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
         }
 
         .text {
@@ -62,22 +59,26 @@
             font-weight: 400;
             line-height: 1.6;
             margin-bottom: 24px;
-            color: #1A1A1A;
+            color: rgba(255,255,255,0.85);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         .button {
             display: block;
             width: 100%;
-            background: #2F4F2F;
-            color: white;
+            background: linear-gradient(135deg, #C8A882 0%, #D4B890 100%);
+            color: #1A1A1A;
             text-decoration: none;
-            padding: 18px;
-            border-radius: 8px;
-            font-family: 'Cormorant Garamond', serif;
+            padding: 20px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
             font-weight: 600;
             font-size: clamp(1.1rem, 3vw, 1.3rem);
             text-align: center;
             margin: 32px 0;
+            box-shadow: 0 4px 20px rgba(200,168,130,0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .reviews-container {
@@ -196,9 +197,10 @@
         .ready-text {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
-            color: #2F4F2F;
+            color: #C8A882;
             margin: 32px 0 16px 0;
             font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
 
         .last-hero {
@@ -270,17 +272,13 @@
         }
 
         .video-container {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            z-index: 1;
-            transition: opacity 2s ease-out;
-        }
-
-        .video-container.fade-out {
-            opacity: 0;
+            height: 100vh;
+            z-index: -2;
+            overflow: hidden;
         }
 
         #heroVideo {
@@ -291,13 +289,13 @@
         }
 
         .video-overlay {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.3);
-            z-index: 2;
+            height: 100vh;
+            background: rgba(0,0,0,0.4);
+            z-index: -1;
         }
 
         .hero-content {
@@ -431,7 +429,7 @@
             <h1 class="hero-title">DRAGON SOUL</h1>
             <h2 class="hero-subtitle">Transformative Escape • Koh Phangan<br>Thailand's Hidden Paradise</h2>
             <p class="hero-text">Where spiritual awakening meets luxury living. Join our intimate group of 12 conscious souls for the ultimate mind-body-spirit reset in tropical paradise.</p>
-            <a href="https://wa.me/66123456789?text=Hey!%20I%20want%20to%20know%20more%20about%20Dragon%20Soul%20retreat.%20This%20looks%20incredible!" class="hero-cta">I'm interested ✨</a>
+            <a href="https://wa.me/66123456789?text=Ready%20for%20Dragon%20Soul%20screening.%20I%20seek%20transformation%2C%20not%20vacation.%20Begin%20my%20application%20process." class="hero-cta">Begin Application</a>
         </div>
         
         <div class="scroll-indicator">
@@ -444,9 +442,9 @@
 
     <!-- About Place -->
     <section class="section">
-        <h1>Your Life-Changing Escape Awaits</h1>
-        <h2>7 days that will shift everything.</h2>
-        <p class="text">Imagine waking up to ocean views, starting your day with guided meditation, then diving deep into ancient healing practices. By day 3, you'll feel lighter. By day 7, you'll be completely transformed. Come solo or bring your partner—this journey changes everything.</p>
+        <h1>Proven Transformation. Measurable Results.</h1>
+        <h2>7 days. Lifetime change.</h2>
+        <p class="text">40% cortisol reduction verified through island biometrics. 3x decision clarity via precision breathwork protocols. Complete nervous system reset. Authentic power reclaimed. This is not a vacation—this is your renaissance.</p>
         
         <div class="reviews-container">
             <div class="reviews-track">
@@ -501,7 +499,7 @@
         </div>
 
         <p class="ready-text">Ready to transform your life? Let's chat!</p>
-        <a href="https://wa.me/66123456789?text=Hey!%20I%20want%20to%20know%20more%20about%20Dragon%20Soul%20retreat.%20This%20looks%20incredible!" class="button">Tell me more ✨</a>
+        <a href="https://wa.me/66123456789?text=Ready%20for%20Dragon%20Soul%20screening.%20I%20seek%20transformation%2C%20not%20vacation.%20Begin%20my%20application%20process." class="button">Begin Application</a>
     </section>
 
     <!-- Accommodation -->
@@ -563,7 +561,7 @@
         </div>
         
         <p class="ready-text">Your perfect sanctuary is waiting for you!</p>
-        <a href="https://wa.me/66123456789?text=Hey!%20I%20want%20to%20know%20more%20about%20Dragon%20Soul%20retreat.%20This%20looks%20incredible!" class="button">Book my space ✨</a>
+        <a href="https://wa.me/66123456789?text=Ready%20for%20Dragon%20Soul%20screening.%20I%20seek%20transformation%2C%20not%20vacation.%20Begin%20my%20application%20process." class="button">Begin Application</a>
     </section>
 
     <!-- Programs -->
@@ -625,7 +623,7 @@
         </div>
         
         <p class="ready-text">Only 8 spaces left for October 2025! ✨</p>
-        <a href="https://wa.me/66123456789?text=Hey!%20I%20want%20to%20know%20more%20about%20Dragon%20Soul%20retreat.%20This%20looks%20incredible!" class="button">Secure my spot ✨</a>
+        <a href="https://wa.me/66123456789?text=Ready%20for%20Dragon%20Soul%20screening.%20I%20seek%20transformation%2C%20not%20vacation.%20Begin%20my%20application%20process." class="button">Begin Application</a>
     </section>
 
     <!-- Team -->
